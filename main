@@ -19,7 +19,7 @@ def repeat(s):
                     brackets -= 1
                 k += 1
             #实现递归的内部调用
-            inner_string = helper(s[j+1:k - 1])
+            inner_string = repeat(s[j+1:k - 1])
             result += count * inner_string
             i = k
         else:
@@ -29,6 +29,6 @@ def repeat(s):
     return result
 
 # 测试样例
-print(helper("ef3[a]2[bc]gh"))  # 输出: "efaaabcbcgh"
-print(helper("3[a2[c]]"))  # 输出: "accaccacc"
-print(helper("2[3[a]b2[c]]"))  # 输出: "aaabccccaabccc"
+print(repeat("ef3[a]2[bc]gh"))  # 输出: "efaaabcbcgh"
+print(repeat("3[a2[c]]"))  # 输出: "accaccacc"
+print(repeat("2[3[a]b2[c]]"))  # 输出: "aaabccccaabccc"
